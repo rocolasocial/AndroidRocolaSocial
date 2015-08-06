@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/itembuscar"
+            android:title="Buscar"
+            android:icon="@drawable/ic_buscar"/>
+
+        <item
+            android:id="@+id/itemdescubre"
+            android:title="Descubre"
+            android:icon="@drawable/ic_descubre"/>
+
+        <item
+            android:id="@+id/itemturastro"
+            android:title="Tu Rastro"
+            android:icon="@drawable/ic_rastro"/>
+
+        <item
+            android:id="@+id/itemtucuenta"
+            android:title="Tu Cuenta"
+            android:icon="@drawable/ic_cuenta"/>
+    </group>
+
+</menu>

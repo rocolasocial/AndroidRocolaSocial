@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="examples.f.dev.rocolasocial.IniciarSesion">
+
+    <Button
+        android:id="@+id/btnInicia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:alpha="0.50"
+        android:text="@string/btn_login"
+        android:background="@color/green_btn"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:id="@+id/btnIniciaCancela"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:alpha="0.50"
+        android:text="@string/btn_login_cancela"
+        android:background="@color/green_btn"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="center"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/mainbackground" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blur" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitleLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title1"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/textViewSubtitleLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title2"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="2dp"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_dark"
+            android:alpha="0.50"
+            android:padding="15dp"
+            android:textSize="24dp"
+            android:textColor="@color/primary_text"
+            android:text="@string/labelbuttonLogin" />
+
+        <!-- Definicion para cachar la actividad del boton
+android:onClick="clickBtnmain"-->
+
+        <Button
+            android:id="@+id/btnCreaTuCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.50"
+            android:padding="15dp"
+            android:textSize="24dp"
+            android:text="@string/labelbuttoncrea"
+            android:background="@color/primary_text_black"
+            android:layout_marginTop="5dp"/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
