@@ -1,15 +1,35 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="examples.f.dev.rocolasocial.descubre_fragment">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".RocolaActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewFragmentDescubre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="Descubre" />
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/mapdescubre"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"/>
 
-</FrameLayout>
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tablayout" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewpager" />
+    </LinearLayout>
+</RelativeLayout>
