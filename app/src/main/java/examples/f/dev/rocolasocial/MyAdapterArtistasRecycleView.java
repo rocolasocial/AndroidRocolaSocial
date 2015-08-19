@@ -12,7 +12,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
-import domain.GuestModel;
+import examples.f.dev.rocolasocial.domain.GuestModel;
 
 /**
  * Created by Salvador on 10/08/2015.

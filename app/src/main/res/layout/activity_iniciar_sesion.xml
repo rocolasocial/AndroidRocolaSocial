@@ -6,24 +6,64 @@
     android:orientation="vertical"
     tools:context="examples.f.dev.rocolasocial.IniciarSesion">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayoutUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_edittext_login"
+        android:layout_marginRight="@dimen/margin_edittext_login"
+        android:layout_marginTop="50dp">
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_hint_user_name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/paddin_edittext_login"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayoutPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/margin_edittext_login"
+        android:layout_marginRight="@dimen/margin_edittext_login"
+        android:layout_marginTop="50dp">
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_hint_password"
+            android:inputType="textPassword"
+            android:padding="@dimen/paddin_edittext_login" />
+    </android.support.design.widget.TextInputLayout>
+
+
     <Button
         android:id="@+id/btnInicia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:alpha="0.50"
+        android:layout_marginTop="40dp"
+        android:background="@color/primary_dark"
+        android:padding="24dp"
         android:text="@string/btn_login"
-        android:background="@color/green_btn"
-        android:layout_marginTop="5dp"/>
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"/>
 
     <Button
         android:id="@+id/btnIniciaCancela"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:alpha="0.50"
+        android:layout_marginTop="10dp"
+        android:background="@color/primary_dark"
+        android:padding="24dp"
         android:text="@string/btn_login_cancela"
-        android:background="@color/green_btn"
-        android:layout_marginTop="5dp"/>
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"/>
 
 </LinearLayout>

@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_edittext_login">16dp</dimen>
-    <dimen name="paddin_edittext_login">16dp</dimen>
+    <dimen name="paddin_edittext_login">10dp</dimen>
     <dimen name="paddin_textview_login">26dp</dimen>
     <dimen name="margin_between_elments">4dp</dimen>
 

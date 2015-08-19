@@ -1,11 +1,10 @@
 package examples.f.dev.rocolasocial;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,20 +15,32 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import domain.GuestModel;
+import examples.f.dev.rocolasocial.domain.GuestModel;
+import examples.f.dev.rocolasocial.domain.User;
+import examples.f.dev.rocolasocial.io.ApiClient;
+import examples.f.dev.rocolasocial.model.SetApiData;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
-public class canciones_fragment extends Fragment {
+public class canciones_fragment extends Fragment  {
 
+    private static final String ARG_TITLE = "title";
 
     @Bind(R.id.idRecycleCanciones)
     RecyclerView recycleViewCanciones;
 
-/*    @Bind(R.id.recycleArtistas)
-    RecyclerView recycleViewArtistas;
 
-    @Bind(R.id.recycleListas)
-    RecyclerView recycleViewListas;*/
+
+    //Constructor for new
+    public static canciones_fragment newInstance(String title) {
+        canciones_fragment cancionesFragment = new canciones_fragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_TITLE, title);
+        cancionesFragment.setArguments(args);
+        return cancionesFragment;
+    }
 
 
     public canciones_fragment() {
@@ -55,7 +66,8 @@ public class canciones_fragment extends Fragment {
         //porque  LinearLayoutManager sea vertical
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recycleViewCanciones.setLayoutManager(linearLayoutManager);
-        MyAdapterRecycleView myAdapterRecycleView = new MyAdapterRecycleView(getActivity(), createGuestsCanciones());
+        MyAdapterRecycleView myAdapterRecycleView = new MyAdapterRecycleView(getActivity(), new ArrayList<User>());
+        //createGuestsCanciones());
         recycleViewCanciones.setAdapter(myAdapterRecycleView);
 
         myAdapterRecycleView.setOnItemclickListener(new MyAdapterRecycleView.OnItemClickListener() {
@@ -79,9 +91,9 @@ public class canciones_fragment extends Fragment {
 
             for (int j = 0; j < nameGuests.length; j++) {
                 guestModels.add(new GuestModel(imageGuets[j], nameGuests[j]));
+                Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   Create RecycleVie CANCIONES    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             }
         }
-
 
         return guestModels;
     }

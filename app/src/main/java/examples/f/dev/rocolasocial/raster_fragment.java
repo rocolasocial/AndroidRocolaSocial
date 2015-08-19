@@ -36,7 +36,7 @@ public class raster_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View viewRoot = inflater.inflate(R.layout.fragment_rastro, container, false);
-        ButterKnife.bind(viewRoot);
+        ButterKnife.bind(this, viewRoot);
         textViewFragmentRastro.setText(getArguments().getString(ARG_TITLE));
         return viewRoot;
     }

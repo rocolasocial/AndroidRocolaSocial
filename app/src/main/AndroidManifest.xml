@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".CrearCuenta"
-            android:label="@string/title_activity_crear_cuenta" >
+            android:label= "@string/title_activity_crear_cuenta" >
         </activity>
         <activity
             android:name=".IniciarSesion"

@@ -6,24 +6,196 @@
     android:orientation="vertical"
     tools:context="examples.f.dev.rocolasocial.CrearCuenta">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context=".HomeActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInputFirstName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="4dp">
+
+                    <EditText
+                        android:id="@+id/editTextFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_hint_first_name"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/primary_dark"
+                        android:padding="@dimen/paddin_edittext_login" />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Librria MD solo un edit text por TextInput Layout
+                weight solo rige a los linear layout-->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/textInputLastName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="4dp">
+
+                    <EditText
+                        android:id="@+id/editTextLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_hint_last_name"
+                        android:inputType="textPersonName"
+                        android:padding="@dimen/paddin_edittext_login" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_marginRight="@dimen/margin_between_elments">
+
+                    <EditText
+                        android:id="@+id/editTextPassword1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_hint_password1"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/paddin_edittext_login" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/TxtvPasswordLevel1"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="   ¨¨"
+                    android:layout_marginLeft="@dimen/margin_between_elments"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:textColor="@color/grees_press_btn"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:layout_marginRight="@dimen/margin_between_elments">
+
+                    <EditText
+                        android:id="@+id/editTextPassword2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_hint_password2"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/paddin_edittext_login" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/TxtvPasswordLevel2"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_between_elments"
+                    android:text="   ¨¨"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:textColor="@color/grees_press_btn"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/editPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_hint_phone_number"
+                        android:inputType="phone"
+                        android:padding="@dimen/paddin_edittext_login" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/editEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_hint_email"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/paddin_edittext_login" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
     <Button
         android:id="@+id/btnCreaCuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:alpha="0.50"
+        android:layout_marginTop="40dp"
+        android:background="@color/primary_dark"
+        android:padding="24dp"
         android:text="@string/btn_crea_cuenta"
-        android:background="@color/green_btn"
-        android:layout_marginTop="5dp"/>
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"/>
+
 
     <Button
         android:id="@+id/btnCreaCuentaCancela"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:alpha="0.50"
+        android:layout_marginTop="10dp"
+        android:background="@color/primary_dark"
+        android:padding="24dp"
         android:text="@string/btn_crea_cuenta_cancela"
-        android:background="@color/green_btn"
-        android:layout_marginTop="5dp"/>
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"/>
 
 </LinearLayout>

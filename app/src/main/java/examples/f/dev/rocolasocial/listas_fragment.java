@@ -1,11 +1,10 @@
 package examples.f.dev.rocolasocial;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +15,15 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import domain.GuestModel;
+import examples.f.dev.rocolasocial.domain.GuestModel;
+import examples.f.dev.rocolasocial.domain.User;
+import examples.f.dev.rocolasocial.model.SetApiData;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
-public class listas_fragment extends Fragment {
+public class listas_fragment extends Fragment  {
 
 
     @Bind(R.id.idRecycleListas)
@@ -73,6 +77,7 @@ public class listas_fragment extends Fragment {
 
             for (int j = 0; j < nameGuests.length; j++) {
                 guestModels.add(new GuestModel(imageGuets[j], nameGuests[j]));
+                Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   Create RecycleVie LISTAS    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             }
         }
 
@@ -80,6 +85,31 @@ public class listas_fragment extends Fragment {
         return guestModels;
     }
 
+    public void createListas () {
+        //ArrayList<User>
 
+        ArrayList<User> songs = null;
+        songs = SetApiData.getInstance().getSongs();
+
+        for (User user : songs) {
+
+            Log.i("Artistas: ", "Listas: " + user.toString());
+            Log.i("Artistas: ", user.getUserName());
+            Log.i("Artistas: ", String.valueOf(user.getInitialtime()));
+            Log.i("Artistas: ", String.valueOf(user.getFinishtime()));
+            for (int x = 0; x < user.getCanciones().size(); x++) {
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getName()));
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getAlbum()));
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getCoverUrl()));
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getGenre()));
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getArtist()));
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getCoordinates()[0]));
+                Log.i("Artistas: ", String.valueOf(user.getCanciones().get(x).getCoordinates()[1]));
+            }
+
+        }
+
+        //return  users;
+    }
 
 }
