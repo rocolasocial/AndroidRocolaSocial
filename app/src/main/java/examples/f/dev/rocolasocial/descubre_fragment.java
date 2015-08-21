@@ -31,10 +31,9 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class descubre_fragment extends Fragment implements Callback<ArrayList<User>> {
+public class descubre_fragment extends Fragment {
 //implements Callback<ArrayList<User>>
     private static final String ARG_TITLE = "title";
-    static Boolean API_RESULT_OK = false;
     SupportMapFragment mapFragment;
 
     @Bind(R.id.viewpager)
@@ -59,38 +58,10 @@ public class descubre_fragment extends Fragment implements Callback<ArrayList<Us
     }
 
     @Override
-    public void onResume(){
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        super.onResume();
-
-        ApiClient.getInstance()
-                .getTopsTracks(this);
-
-        Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   onCreate FINISH    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
     }
-
-    @Override
-    public void success(ArrayList<User> users, Response response) {
-        API_RESULT_OK = true;
-        Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   RETROFIT SUCCESS FINISH    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-    }
-
-    @Override
-    public void onPostExecute(ArrayList<User> users) {
-        SetApiData setApiData;
-        setApiData = SetApiData.getInstance();
-        setApiData.setSongs(users);
-
-        Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   RETROFIT ONPOSTEXECUTE FINISH    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
-        createApiData();
-    }
-
-    @Override
-    public void failure(RetrofitError error) {
-        error.printStackTrace();
-    }
-
 
 
     //Crear la Vista de descubre_fragment
@@ -135,7 +106,7 @@ public class descubre_fragment extends Fragment implements Callback<ArrayList<Us
         mapFragment.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(19.363138, -99.182167), 13));
         mapFragment.getMap().addMarker(new MarkerOptions()
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_walk))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.bookmarkmusic))
                 .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
                 .position(new LatLng(19.354878, -99.185600)));
 
@@ -145,7 +116,7 @@ public class descubre_fragment extends Fragment implements Callback<ArrayList<Us
             //x_lat = 19.354878;
             //y_long = -99.187317;
             mapFragment.getMap().addMarker(new MarkerOptions()
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_walk))
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.bookmarkmusic))
                     .anchor(0.0f, 1.0f) // Anchors the marker on the bottom left
                     .position(new LatLng(x_lat, y_long)));
 
@@ -155,72 +126,13 @@ public class descubre_fragment extends Fragment implements Callback<ArrayList<Us
         List<Fragment> fragments = new ArrayList();
         fragments.add(new canciones_fragment());
         fragments.add(new artistas_fragment());
-        fragments.add(new listas_fragment());
 
         MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter (getChildFragmentManager(), fragments);
         viewPager.setAdapter(myFragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   onCreateView FINISH    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
          return viewRoot;
 
-    }
-/*
-    @Override
-    public void onResume() {
-        super.onResume();
-        ApiClient.getInstance()
-                .getTopsTracks(this);
-
-        Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   onResume FINISH    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
-    }
-
-   @Override
-    public void success(ArrayList<User> users, Response response) {
-        API_RESULT_OK = true;
-        SetApiData setApiData;
-        setApiData = SetApiData.getInstance();
-        setApiData.setSongs(users);
-
-        Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   RETROFIT SUCCESS FINISH    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
-        createApiData();
-    }
-
-    @Override
-    public void failure(RetrofitError error) {
-        error.printStackTrace();
-    }*/
-
-
-
-    public void createApiData () {
-        //ArrayList<User>
-
-        ArrayList<User> songs;
-        songs = SetApiData.getInstance().getSongs();
-
-        for (User user : songs) {
-
-            Log.i("Canciones: ", "Canciones: " + user.toString());
-            Log.i("Canciones: ", user.getUserName());
-            Log.i("Canciones: ", String.valueOf(user.getInitialtime()));
-            Log.i("Canciones: ", String.valueOf(user.getFinishtime()));
-            for (int x = 0; x < user.getCanciones().size(); x++) {
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getName()));
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getAlbum()));
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getCoverUrl()));
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getGenre()));
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getArtist()));
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getCoordinates()[0]));
-                Log.i("Canciones: ", String.valueOf(user.getCanciones().get(x).getCoordinates()[1]));
-            }
-
-        }
-
-        //return  users;
     }
 
 }

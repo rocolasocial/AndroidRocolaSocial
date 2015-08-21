@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -15,8 +16,14 @@ public class raster_fragment extends Fragment {
 
     private static final String ARG_TITLE = "title";
 
-    @Bind(R.id.textViewFragmentRastro)
-    TextView textViewFragmentRastro;
+    @Bind(R.id.imageRastro)
+    ImageView imageViewFragmentRastro;
+
+    @Bind(R.id.TextViewFragmentRastro1)
+    TextView textViewFragmentRastro1;
+
+    @Bind(R.id.TextViewFragmentRastro2)
+    TextView textViewFragmentRastro2;
 
     public static raster_fragment newInstance(String title) {
         raster_fragment rastroFragment = new raster_fragment();
@@ -37,7 +44,7 @@ public class raster_fragment extends Fragment {
         // Inflate the layout for this fragment
         View viewRoot = inflater.inflate(R.layout.fragment_rastro, container, false);
         ButterKnife.bind(this, viewRoot);
-        textViewFragmentRastro.setText(getArguments().getString(ARG_TITLE));
+        //textViewFragmentRastro.setText(getArguments().getString(ARG_TITLE));
         return viewRoot;
     }
 

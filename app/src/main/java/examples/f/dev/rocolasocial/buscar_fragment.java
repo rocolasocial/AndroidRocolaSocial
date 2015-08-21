@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -23,8 +24,14 @@ public class buscar_fragment extends Fragment {
 
     private static final String BUSCAR_TITLE = "title";
 
-    @Bind(R.id.textViewFragmentBuscar)
-    TextView textViewFragmentBuscar;
+    @Bind(R.id.imageBuscar)
+    ImageView imageViewFragmentBuscar;
+
+    @Bind(R.id.TextViewFragmentBuscar1)
+    TextView textViewFragmentBuscar1;
+
+    @Bind(R.id.TextViewFragmentBuscar2)
+    TextView textViewFragmentBuscar2;
 
     public static buscar_fragment newInstance(String title) {
         buscar_fragment buscarFragment = new buscar_fragment();
@@ -45,7 +52,7 @@ public class buscar_fragment extends Fragment {
         // Inflate the layout for this fragment
         View viewRoot = inflater.inflate(R.layout.fragment_buscar, container, false);
         ButterKnife.bind(this, viewRoot);
-        textViewFragmentBuscar.setText(getArguments().getString(BUSCAR_TITLE));
+        //textViewFragmentBuscar.setText(getArguments().getString(BUSCAR_TITLE));
         return viewRoot;
     }
 

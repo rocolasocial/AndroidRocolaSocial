@@ -15,32 +15,20 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import examples.f.dev.rocolasocial.domain.Canciones;
 import examples.f.dev.rocolasocial.domain.GuestModel;
+import examples.f.dev.rocolasocial.domain.Track;
 import examples.f.dev.rocolasocial.domain.User;
-import examples.f.dev.rocolasocial.io.ApiClient;
 import examples.f.dev.rocolasocial.model.SetApiData;
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
 
 public class canciones_fragment extends Fragment  {
 
     private static final String ARG_TITLE = "title";
 
+
     @Bind(R.id.idRecycleCanciones)
     RecyclerView recycleViewCanciones;
-
-
-
-    //Constructor for new
-    public static canciones_fragment newInstance(String title) {
-        canciones_fragment cancionesFragment = new canciones_fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_TITLE, title);
-        cancionesFragment.setArguments(args);
-        return cancionesFragment;
-    }
 
 
     public canciones_fragment() {
@@ -66,36 +54,47 @@ public class canciones_fragment extends Fragment  {
         //porque  LinearLayoutManager sea vertical
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recycleViewCanciones.setLayoutManager(linearLayoutManager);
-        MyAdapterRecycleView myAdapterRecycleView = new MyAdapterRecycleView(getActivity(), new ArrayList<User>());
+        MyAdapterRecycleView myAdapterRecycleView;
+        myAdapterRecycleView = new MyAdapterRecycleView(getActivity(), createCanciones());
         //createGuestsCanciones());
         recycleViewCanciones.setAdapter(myAdapterRecycleView);
 
         myAdapterRecycleView.setOnItemclickListener(new MyAdapterRecycleView.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(getActivity(), "posicion: " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "posicion: " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Ir a la info de la cancion: " + position, Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    private static List<GuestModel> createGuestsCanciones() {
+    private static List<Canciones> createCanciones() {
 
-        int[] nameGuests = {R.string.name_guest_1, R.string.name_guest_2, R.string.name_guest_3, R.string.name_guest_4};
-        int[] imageGuets = {R.drawable.guest_1, R.drawable.guest_2, R.drawable.guest_3, R.drawable.guest_4};
+/*        String[] mCoverUrl = {"http://userserve-ak.last.fm/serve/64s/105845747.png", "http://userserve-ak.last.fm/serve/64s/105845747.png", "http://userserve-ak.last.fm/serve/64s/105845747.png", "http://userserve-ak.last.fm/serve/64s/105845747.png", };
+        String[] mName = {"--", "--", "--", "--"};
+        String[] mAlbum = {"--", "--", "--", "--"};
+        String[] mGenre = {"--", "--", "--", "--"};
+        String[] mArtist = {"--", "--", "--", "--"};*/
 
-        List<GuestModel> guestModels = new ArrayList<>();
+        String[] mCoverUrl = {"http://userserve-ak.last.fm/serve/64s/105845747.png"};
+        String[] mName = {"--"};
+        String[] mAlbum = {"--"};
+        String[] mGenre = {"--"};
+        String[] mArtist = {"--"};
 
+        List<Canciones> guestCanciones = new ArrayList<>();
+        guestCanciones.add(new Canciones(mCoverUrl[0], mName[0], mAlbum[0], mGenre[0], mArtist[0]));
 
-        for (int i = 0; i < 4; i++) {
+/*        for (int i = 0; i < 5; i++) {
 
-            for (int j = 0; j < nameGuests.length; j++) {
-                guestModels.add(new GuestModel(imageGuets[j], nameGuests[j]));
-                Log.i("", ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   Create RecycleVie CANCIONES    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            for (int j = 0; j < mCoverUrl.length; j++) {
+                guestCanciones.add(new Canciones( mCoverUrl[j], mName[j], mAlbum[j], mGenre[j], mArtist[j]));
+                Log.i("",">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><   Create RecycleVie Canciones Dummy    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
             }
-        }
+        }*/
 
-        return guestModels;
+        return guestCanciones;
     }
 
 }

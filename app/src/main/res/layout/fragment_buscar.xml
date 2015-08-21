@@ -1,15 +1,37 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="examples.f.dev.rocolasocial.buscar_fragment">
 
-    <TextView
-        android:id="@+id/textViewFragmentBuscar"
+
+
+    <ImageView
+        android:id="@+id/imageBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/undercons2" />
+
+    <TextView
+        android:id="@+id/TextViewFragmentBuscar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"
+        android:textColor="@color/background_floating_material_dark"
         android:text="Buscar" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/TextViewFragmentBuscar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:textColor="@color/background_floating_material_dark"
+        android:text="Under Construction" />
+</LinearLayout>

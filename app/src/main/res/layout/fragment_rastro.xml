@@ -1,14 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="examples.f.dev.rocolasocial.raster_fragment">
-    <TextView
-        android:id="@+id/textViewFragmentRastro"
+    android:orientation="vertical"
+    tools:context="examples.f.dev.rocolasocial.buscar_fragment">
+
+    <ImageView
+        android:id="@+id/imageRastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/undercons2" />
+
+    <TextView
+        android:id="@+id/TextViewFragmentRastro1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"
+        android:textColor="@color/background_floating_material_dark"
         android:text="Rastro" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/TextViewFragmentRastro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:textColor="@color/background_floating_material_dark"
+        android:text="Under Construction" />
+
+</LinearLayout>
